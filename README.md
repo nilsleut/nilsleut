@@ -8,6 +8,10 @@ Interested in NeuroAI and the mathematics of learning — how neural networks re
 Tested whether a Predictive Coding network — a model built according to the brain's own computational logic — represents visual information the way the human visual cortex does. Trained a hierarchical PC network on ResNet-50 features and compared its internal representations to 7T fMRI data (THINGS-fMRI, N=3 subjects) using Representational Similarity Analysis across six cortical ROIs (V1–IT). Key finding: PC layers show a crossing gradient across the visual hierarchy (interaction effect Δr₀−Δr₃ = +0.266, replicated in all 3 subjects), and PC r₀ outperforms ViT-B/16 and CLIP at V1 — despite those models being trained on orders of magnitude more data.  
 `PyTorch` `fMRI` `RSA` `Predictive Coding` `NeuroAI`
 
+### [Predictive Coding vs. Spiking Neural Networks](https://github.com/nilsleut/Predictive-Coding-vs.-Spiking-Neural-Networks)
+RSA comparing Predictive Coding (Rao & Ballard 1999) and Spiking Neural Networks (snnTorch) against THINGS-fMRI (N=3 subjects, V1–IT). Key finding: PC develops cortical hierarchy gradient (Δr₀−Δr₃ = +0.266, p=0.007); SNN reaches 91% PC-IT performance but lacks hierarchy. PC r₃ beats ResNet-50 at LOC/IT.  
+`PyTorch` `snnTorch` `fMRI` `RSA` `Predictive Coding` `Spiking NNs` `NeuroAI`
+
 ### [nanoGPT Ablation: Depth & Head Scaling](https://github.com/nilsleut/nanogpt-ablation-fineweb)
 Systematic ablation study on transformer scaling using nanoGPT on FineWeb-Edu (~104M tokens). Isolated depth (n_layer: 2,4,6,8 at n_head=6) and heads (n_head: 1,2,3 at n_layer=6, d=384). Key finding: 6L-3H optimal (val loss 5.32, PPL 204); head scaling saturates at ~128 dim/head (+1.5% loss reduction per doubling), depth shows quadratic diminishing returns beyond 6 layers.  
 `PyTorch` `nanoGPT` `Transformers` `Ablation Study`
