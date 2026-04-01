@@ -1,6 +1,6 @@
 # Nils Leutenegger
 
-Gymnasium student (Zentralschweiz, Switzerland).  
+Pre-university student (Zentralschweiz, Switzerland), targeting ETH Informatik.  
 Interested in NeuroAI and the mathematics of learning — how neural networks represent information, and how that relates to biological systems.
 
 ---
@@ -18,6 +18,10 @@ Hierarchical PC network trained on ResNet-50 features, compared to 7T fMRI (THIN
 ### [EventSNN — Gesture Recognition on DVS Event Camera Data](https://github.com/nilsleut/EventSNN-Gesture-Recognition-on-DVS-Event-Camera-Data)
 LIF spiking neural network for gesture classification on the IBM DVS128 dataset (11 classes). DVS cameras fire asynchronous events like retinal ganglion cells — pairing them with an SNN creates a doubly bio-inspired pipeline. Achieves 67% validation accuracy with a fully-connected architecture (chance: 9.1%). Documents known limitations: FC-only ignores spatial structure, rate coding discards spike timing precision.  
 `PyTorch` `snnTorch` `Event Camera` `Neuromorphic` `NeuroAI`
+
+### [Grokking — Fourier Features & Mechanistic Interpretability](https://github.com/nilsleut/grokking-fourier-interpretability)
+Replication and extension of Nanda et al. (2023) on modular arithmetic (a+b) mod p. Part 1: four lines of evidence that the trained model implements a Fourier multiplication algorithm — sparse W_E spectrum (Gini=0.605), W_L effective rank ~10 (95.9% energy in top-10 SVs), 2D-FFT grid structure, and ablation (keys removed → 1.7% accuracy). Part 2: multi-modulus analysis across p ∈ {71, 83, 97, 113} to test whether key frequencies are structurally bound to p. Finding: frequencies are within-p stable across seeds but do not cluster at universal harmonic ratios — frequency selection is p-specific.  
+`PyTorch` `Mechanistic Interpretability` `Transformers` `Fourier Analysis`
 
 ### [nanoGPT Ablation: Depth and Head Scaling](https://github.com/nilsleut/nanoGPT-Ablation-Study)
 Systematic ablation on transformer scaling using nanoGPT on FineWeb-Edu (~104M tokens, 5000 iterations per run). Key findings: depth has a strong, monotonically decreasing effect on val loss (L2→L4: −0.160, L6→L8: −0.033); head count has almost no effect — 1 head vs 6 heads differs by only 0.029 val loss at fixed depth. Depth dominates at small scale.  
