@@ -1,8 +1,9 @@
 # Nils Leutenegger
 
-Pre-university student (Zentralschweiz, Switzerland), targeting ETH Informatik.  
-Interested in NeuroAI and the mathematics of learning — how neural networks represent information, and how that relates to biological systems.
+Pre-university researcher (Zentralschweiz, Switzerland), starting ETH Zürich Computer Science autumn 2026.  
+Working on NeuroAI — how biological learning rules shape neural representations, and what that means for machine learning.
 
+📄 **Preprint:** [Untrained CNNs Match Backpropagation at V1](https://arxiv.org/abs/2604.16875) — arXiv 2026
 ---
 
 ## Projects
@@ -11,56 +12,60 @@ Interested in NeuroAI and the mathematics of learning — how neural networks re
 Systematic RSA comparison of four learning rules (Backpropagation, Feedback Alignment, Predictive Coding, STDP) plus an untrained baseline against THINGS-fMRI (720 stimuli, N=3 subjects, V1–IT). Key findings: V1 alignment is architecture-driven — an untrained CNN matches BP (p=0.43); learning rules only differentiate at LOC/IT where BP dominates (d>2.3); PC matches BP at IT (p=0.18) using only local Hebbian updates; FA actively degrades representations below the random baseline (d=1.1). Includes permutation tests (N=1000), bootstrap CIs, partial RSA, and filter analysis.  
 `PyTorch` `fMRI` `RSA` `Predictive Coding` `STDP` `Feedback Alignment` `NeuroAI`
 
+### [Biologically Plausible RL Plays Pong](https://github.com/nilsleut/bio-plausible-rl-pong)
+Can a fully backprop-free agent learn Pong? Custom environment, PPO from scratch as baseline, then a biologically plausible agent combining Predictive Coding for feature learning with distributional Hebbian plasticity for value estimation (inspired by Dabney et al. 2020). The Hebbian agent matches PPO (61% vs 59%) with engineered features; the full BioAgent (PC + Hebbian, zero backprop) reaches 57%. Self-play training works in principle but exposes the plasticity-stability dilemma. Everything from scratch, ~1500 lines.  
+`PyTorch` `Reinforcement Learning` `PPO` `Predictive Coding` `Hebbian Learning` `Self-Play` `From Scratch`
+
 ### [Predictive Coding Inference Dynamics vs. Learning Rules in RSA](https://github.com/nilsleut/Predictive-Coding-Inference-Dynamics-vs.-Learning-Rules-in-RSA)
 Extension of *Predictive Coding and the Visual Cortex* testing whether the cortical hierarchy gradient in RSA against 7T fMRI is produced by the weight update rule or by the inference dynamics of the PC network. Null result: the gradient is driven by inference dynamics and ResNet initialisation, not the learning rule — honestly framed.  
 `PyTorch` `fMRI` `RSA` `Predictive Coding` `NeuroAI`
 
 ### [Predictive Coding vs. Spiking Neural Networks](https://github.com/nilsleut/Predictive-Coding-vs.-Spiking-Neural-Networks)
-RSA comparing Predictive Coding (Rao & Ballard 1999) and Spiking Neural Networks (snnTorch) against THINGS-fMRI (N=3 subjects, V1–IT). Key finding: PC develops a cortical hierarchy gradient (Δr₀−Δr₃ = +0.266, p=0.007, replicated in all 3 subjects); SNN reaches 92% of PC-IT performance but lacks the cross-over. PC r₃ outperforms ResNet-50 at LOC and IT.  
+RSA comparing Predictive Coding (Rao & Ballard 1999) and Spiking Neural Networks (snnTorch) against THINGS-fMRI (N=3 subjects, V1–IT). Key finding: PC develops a cortical hierarchy gradient (Δr₀−Δr₃ = +0.266, p=0.007, replicated in all 3 subjects); SNN reaches 92% of PC-IT performance but lacks the cross-over.  
 `PyTorch` `snnTorch` `fMRI` `RSA` `Predictive Coding` `NeuroAI`
 
 ### [Predictive Coding and the Visual Cortex](https://github.com/nilsleut/Predictive-Coding-and-the-Visual-Cortex)
-Hierarchical PC network trained on ResNet-50 features, compared to 7T fMRI (THINGS-fMRI, N=3 subjects) via RSA across six cortical ROIs (V1–IT). PC layers show a crossing gradient: r₀ correlates most strongly with V1 (ρ=0.30), r₃ with IT (ρ=0.16). PC r₀ outperforms ViT-B/16 and CLIP at V1 despite those models being trained on orders of magnitude more data.  
+Hierarchical PC network trained on ResNet-50 features, compared to 7T fMRI (THINGS-fMRI, N=3 subjects) via RSA across six cortical ROIs (V1–IT). PC layers show a crossing gradient: r₀ correlates most strongly with V1 (ρ=0.30), r₃ with IT (ρ=0.16).  
 `PyTorch` `fMRI` `RSA` `Predictive Coding` `NeuroAI`
 
 ### [Grokking — Fourier Features & Mechanistic Interpretability](https://github.com/nilsleut/grokking-mechanistic-interpretability)
-Replication and extension of Nanda et al. (2023) on modular arithmetic (a+b) mod p. Part 1: four lines of evidence that the trained model implements a Fourier multiplication algorithm — sparse W_E spectrum (Gini=0.605), W_L effective rank ~10 (95.9% energy in top-10 SVs), 2D-FFT grid structure, and ablation (keys removed → 1.7% accuracy). Part 2: multi-modulus analysis across p ∈ {71, 83, 97, 113} to test whether key frequencies are structurally bound to p. Finding: frequencies are within-p stable across seeds but do not cluster at universal harmonic ratios — frequency selection is p-specific.  
+Replication and extension of Nanda et al. (2023) on modular arithmetic (a+b) mod p. Four lines of evidence that the trained model implements a Fourier multiplication algorithm. Multi-modulus analysis across p ∈ {71, 83, 97, 113}: frequencies are within-p stable across seeds but do not cluster at universal harmonic ratios.  
 `PyTorch` `Mechanistic Interpretability` `Transformers` `Fourier Analysis`
 
 ### [EventSNN — Gesture Recognition on DVS Event Camera Data](https://github.com/nilsleut/EventSNN-Gesture-Recognition-on-DVS-Event-Camera-Data)
-LIF spiking neural network for gesture classification on the IBM DVS128 dataset (11 classes). DVS cameras fire asynchronous events like retinal ganglion cells — pairing them with an SNN creates a doubly bio-inspired pipeline. Achieves 67% validation accuracy with a fully-connected architecture (chance: 9.1%). Documents known limitations: FC-only ignores spatial structure, rate coding discards spike timing precision.  
+LIF spiking neural network for gesture classification on the IBM DVS128 dataset (11 classes). DVS cameras fire asynchronous events like retinal ganglion cells — pairing them with an SNN creates a doubly bio-inspired pipeline. 67% accuracy (chance: 9.1%).  
 `PyTorch` `snnTorch` `Event Camera` `Neuromorphic` `NeuroAI`
 
 ### [nanoGPT Ablation: Depth and Head Scaling](https://github.com/nilsleut/nanoGPT-Ablation-Study)
-Systematic ablation on transformer scaling using nanoGPT on FineWeb-Edu (~104M tokens, 5000 iterations per run). Key findings: depth has a strong, monotonically decreasing effect on val loss (L2→L4: −0.160, L6→L8: −0.033); head count has almost no effect — 1 head vs 6 heads differs by only 0.029 val loss at fixed depth. Depth dominates at small scale.  
+Systematic ablation on transformer scaling using nanoGPT on FineWeb-Edu (~104M tokens). Depth has a strong, monotonically decreasing effect on val loss; head count has almost no effect at fixed depth.  
 `PyTorch` `nanoGPT` `Transformers` `Ablation Study`
 
-### [RSA — Comparing CNNs and Transformers to Human Visual Cortex](https://github.com/nilsleut/Representational-Similarity-Analysis-THINGS-fMRI)
-Representational Similarity Analysis on THINGS-fMRI. Compared ResNet-50, ViT-B/16, and CLIP across six visual areas (V1–IT). Key finding: visual hierarchy explains IT cortex representations better than language-grounded semantics — a negative result for CLIP.  
+### [RSA — CNNs and Transformers vs. Human Visual Cortex](https://github.com/nilsleut/Representational-Similarity-Analysis-THINGS-fMRI)
+RSA on THINGS-fMRI comparing ResNet-50, ViT-B/16, and CLIP across V1–IT. Visual hierarchy explains IT representations better than language-grounded semantics — a negative result for CLIP.  
 `PyTorch` `fMRI` `RSA` `NeuroAI`
 
 ### [Monte Carlo Options Pricing](https://github.com/nilsleut/Monte-Carlo-Options-Pricing)
-Implementation of Monte Carlo methods for pricing European and American options under the Black-Scholes model. European options with variance reduction techniques; American calls via Longstaff-Schwartz (2001) LSMC algorithm; call/put comparison confirming Merton (1973).  
+European options with variance reduction; American calls via Longstaff-Schwartz LSMC.  
 `NumPy` `SciPy` `Stochastic Processes` `Quantitative Finance`
 
-### [Grokking — Delayed Generalization in Modular Arithmetic](https://github.com/nilsleut/Grokking-Generalization-Beyond-Overfitting)
-Reproduction of Power et al. (2022). 1-layer Transformer trained on (a+b) mod 97. Includes phase diagram mapping the transition between memorisation, grokking, and failure to generalise across dataset size and weight decay.  
+### [Grokking — Delayed Generalization](https://github.com/nilsleut/Grokking-Generalization-Beyond-Overfitting)
+Reproduction of Power et al. (2022). Phase diagram mapping memorisation, grokking, and failure across dataset size and weight decay.  
 `PyTorch` `Transformers` `Generalization`
 
 ### [DQN — Atari Breakout](https://github.com/nilsleut/Deep-Q-Network-Atari-Breakout)
-Paper-faithful implementation of Mnih et al. (2015). Replay buffer, target network, frame stacking, reward clipping. Trained for 5M frames, achieving ~17 mean reward.  
+Paper-faithful Mnih et al. (2015). Replay buffer, target network, frame stacking. 5M frames, ~17 mean reward.  
 `PyTorch` `Reinforcement Learning` `Atari`
 
 ### [MLP from Scratch — Maturaarbeit](https://github.com/nilsleut/Maturaarbeit_NilsLeutenegger)
-Fully-connected neural network implemented in NumPy without frameworks. Backpropagation derived and coded manually. Applied to Swiss referendum turnout prediction. Grade: 6/6.  
+Neural network in NumPy, backprop derived manually. Swiss referendum turnout prediction. Grade: 6/6.  
 `NumPy` `Backpropagation` `From Scratch`
 
 ---
 
 ## Background
 
-- Swiss Physics Olympiad, Round 2
-- Swiss Informatics Olympiad, Round 2
+- Swiss Physics Olympiad, Round 2  
+- Swiss Informatics Olympiad, Round 2  
 - Read: Goodfellow et al. *Deep Learning*; Prince *Understanding Deep Learning*; Gerstner et al. *Neuronal Dynamics*; Dayan & Abbott *Theoretical Neuroscience*
 
 ---
