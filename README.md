@@ -1,6 +1,6 @@
 # Nils Leutenegger
 
-Pre-university researcher (Zentralschweiz, Switzerland), starting ETH Zürich Computer Science autumn 2026.  
+Pre-university researcher (Zentralschweiz, Switzerland) 
 Working on NeuroAI — how biological learning rules shape neural representations, and what that means for machine learning.
 
 📄 **Preprint:** [Untrained CNNs Match Backpropagation at V1](https://arxiv.org/abs/2604.16875) — arXiv 2026
