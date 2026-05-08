@@ -16,6 +16,10 @@ Systematic RSA comparison of four learning rules (Backpropagation, Feedback Alig
 Can a fully backprop-free agent learn Pong? Custom environment, PPO from scratch as baseline, then a biologically plausible agent combining Predictive Coding for feature learning with distributional Hebbian plasticity for value estimation (inspired by Dabney et al. 2020). The Hebbian agent matches PPO (61% vs 59%) with engineered features; the full BioAgent (PC + Hebbian, zero backprop) reaches 57%. Self-play training works in principle but exposes the plasticity-stability dilemma. Everything from scratch, ~1500 lines.  
 `PyTorch` `Reinforcement Learning` `PPO` `Predictive Coding` `Hebbian Learning` `Self-Play` `From Scratch`
 
+### [Swiss Referendum Predictor — Full-Stack ML System](https://github.com/nilsleut/swiss-referendum-predictor)
+End-to-end production ML system predicting Swiss referendum voter turnout. PyTorch MLP trained on 6 083 referendums × 584 features, exported to ONNX and served via a Fastify (TypeScript) API with PostgreSQL backend and React + Recharts dashboard. Full Docker Compose setup with W&B experiment tracking, GitHub Actions CI (three parallel jobs: ML, API, frontend), and deployment configs for Railway and Google Cloud Run.  
+`PyTorch` `ONNX` `TypeScript` `Fastify` `React` `PostgreSQL` `Docker` `W&B` `CI/CD`
+
 ### [Predictive Coding Inference Dynamics vs. Learning Rules in RSA](https://github.com/nilsleut/Predictive-Coding-Inference-Dynamics-vs.-Learning-Rules-in-RSA)
 Extension of *Predictive Coding and the Visual Cortex* testing whether the cortical hierarchy gradient in RSA against 7T fMRI is produced by the weight update rule or by the inference dynamics of the PC network. Null result: the gradient is driven by inference dynamics and ResNet initialisation, not the learning rule — honestly framed.  
 `PyTorch` `fMRI` `RSA` `Predictive Coding` `NeuroAI`
