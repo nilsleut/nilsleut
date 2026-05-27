@@ -14,7 +14,7 @@ Pre-university NeuroAI researcher · Zentralschweiz, Switzerland
 
 ## NeuroAI
 
-### [Cross-Species RSA: Learning Rules Across Human fMRI and Macaque Electrophysiology]((https://github.com/nilsleut/CROSS_SPECIES_RSA))
+### [Cross-Species RSA: Learning Rules Across Human fMRI and Macaque Electrophysiology](https://github.com/nilsleut/CROSS_SPECIES_RSA)
 Cross-species extension of the learning rules RSA framework. Same five learning rules (BP, FA, PC, STDP, Random) evaluated against macaque V1/V2 (FreemanZiemba2013, 135 stimuli, 102/103 neurons) and V4/IT (MajajHong2015, 3200 stimuli, 88/168 neurons) via Brain-Score. ResNet-50 capacity control, exhaustive permutation tests, stimulus-control analysis.  
 **Key findings:** Early visual alignment (V1/V2) is qualitatively conserved across species — STDP and PC lead in both human and macaque. IT rankings do not transfer (τ = 0.00), partially confounded by stimulus domain. ResNet-50 achieves ρ = 0.23 at macaque IT vs. custom CNN's 0.07–0.13, confirming IT alignment scales with model capacity.  
 `PyTorch` `RSA` `Electrophysiology` `fMRI` `Brain-Score` `Cross-Species`
