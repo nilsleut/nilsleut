@@ -4,11 +4,22 @@ Pre-university NeuroAI researcher · Zentralschweiz, Switzerland
 
 ---
 
+> ### 📄 Code and data for *Evaluation Resolution Confounds Learning-Rule Comparisons*
+> **→ [nilsleut/evaluation-resolution-rsa](https://github.com/nilsleut/evaluation-resolution-rsa)**
+> All results, the scripts that produced them, the seven paper figures, and a per-column data dictionary. This is what the paper's Code and Data Availability section points here for.
+
 **Research interest:** How biological learning rules shape neural representations and what that tells us about machine learning.
 
-**Preprint 1 (arXiv 2026):** [Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI](https://arxiv.org/abs/2604.16875)
+## Preprints
 
-**Preprint 2 (arXiv 2026):** [Cross-Species RSA Reveals Conserved Early Visual Alignment but Divergent Higher-Area Rankings Across Human fMRI and Macaque Electrophysiology](https://arxiv.org/abs/2605.22401)
+| | Paper | Links |
+|---|---|---|
+| **4** | **Evaluation Resolution Confounds Learning-Rule Comparisons in Model–Brain RSA of Early Visual Cortex** (2026) — the untrained-beats-backprop result at V1 is largely a function of the resolution at which the model is evaluated. Poster at the **Bernstein Conference 2026**. | [arXiv:2608.12408](https://arxiv.org/abs/2608.12408) · [code](https://github.com/nilsleut/evaluation-resolution-rsa) |
+| **3** | **Training Degrades V1 Alignment Across Learning Rules** (2026) — RSA along the training trajectory, eight milestones. *See the correction note on the current arXiv version: with an evaluation-mode defect repaired, the central claim reverses.* | [arXiv:2605.30556](https://arxiv.org/abs/2605.30556) · [code](https://github.com/nilsleut/learning-rules-rsa) |
+| **2** | **Cross-Species RSA Reveals Conserved Early Visual Alignment but Divergent Higher-Area Rankings Across Human fMRI and Macaque Electrophysiology** (2026) | [arXiv:2605.22401](https://arxiv.org/abs/2605.22401) · [code](https://github.com/nilsleut/CROSS_SPECIES_RSA) |
+| **1** | **Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI** (2026) | [arXiv:2604.16875](https://arxiv.org/abs/2604.16875) · [code](https://github.com/nilsleut/learning-rules-rsa) |
+
+Preprints 1–3 share an implementation defect affecting their predictive-coding and STDP conditions. Correction notes accompany the current arXiv versions of all three; preprint 4 reports the repaired five-seed re-run in full.
 
 ---
 
@@ -94,6 +105,7 @@ Neural network in NumPy with backprop derived manually. Swiss referendum turnout
 
 ## Background
 
+- Poster, Bernstein Conference 2026
 - Swiss Physics Olympiad, Round 2
 - Swiss Informatics Olympiad, Round 2
 - Brain-Score PR #2352 (merged)
@@ -101,5 +113,5 @@ Neural network in NumPy with backprop derived manually. Swiss referendum turnout
 
 ---
 
-Open to research internship opportunities in NeuroAI or ML theory starting summer 2026.  
+Currently open to research internship or research-assistant opportunities in NeuroAI or ML theory.  
 nils.leutenegger@gmail.com
